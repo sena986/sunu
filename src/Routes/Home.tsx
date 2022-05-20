@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import { openApp } from "../atoms";
+import Achart from "../Components/Chart";
 
 const Main = styled(motion.div)`
   width: 100vw;
   height: 100vh;
-  background: ${(props) => props.theme.white.darker};
+  background: ${(props) => props.theme.white.lighter};
 `;
 const Loading = styled(motion.div)`
   width: 100vw;
@@ -27,8 +28,8 @@ function Home() {
   const [open, setOpen] = useRecoilState(openApp);
   const [symbol, setSymbol] = useState(false);
   useEffect(() => {
-    setTimeout(() => setSymbol((prev) => !prev), 6500);
-    setTimeout(() => setOpen((prev) => !prev), 7500);
+    setTimeout(() => setSymbol(true), 6500);
+    setTimeout(() => setOpen(false), 7500);
   }, [setOpen]);
   return open ? (
     <Loading
@@ -128,7 +129,7 @@ function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0 }}
     >
-      Home!
+      <Achart />
     </Main>
   );
 }

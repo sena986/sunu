@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { openApp } from "../atoms";
 
-const Head = styled(motion.div)``;
+const Head = styled(motion.div)`
+  background-color: ${(props) => props.theme.black.darker};
+`;
 
 const Svg = styled(motion.svg)``;
 
@@ -15,22 +18,24 @@ function Header() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0 }}
     >
-      <Svg
-        version="1.1"
-        id="レイヤー_1"
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        width="100px"
-        height="100px"
-        viewBox="0 0 1000 1000"
-        enable-background="new 0 0 1000 1000"
-      >
-        <motion.path
-          layoutId="symbol"
-          stroke="#fd79a8"
-          stroke-width="6"
-          d="M746.589,592.819c-6.714-32.241-24.852-60.446-54.399-84.623
+      <Link to="/">
+        <Svg
+          version="1.1"
+          id="レイヤー_1"
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="100px"
+          height="100px"
+          viewBox="0 0 1000 1000"
+          enable-background="new 0 0 1000 1000"
+        >
+          <motion.path
+            layoutId="symbol"
+            fill="#fff"
+            stroke="#fd79a8"
+            stroke-width="6"
+            d="M746.589,592.819c-6.714-32.241-24.852-60.446-54.399-84.623
 	c-15.239-12.536-32.475-22.379-51.722-29.554c-19.268-7.158-38.954-13.435-59.104-18.806c-20.148-5.375-40.531-10.75-61.12-16.121
 	c-20.61-5.374-39.416-12.529-56.418-21.491c-18.806-9.844-31.125-21.495-36.937-34.926c-5.833-13.435-6.273-25.964-1.343-37.612
 	c4.91-11.627,14.103-21.491,27.537-29.551c13.428-8.06,30.43-11.63,51.047-10.746c13.428,0,26.188,2.245,38.279,6.714
@@ -47,8 +52,9 @@ function Header() {
 	c-7.619,13.896-11.207,30.016-10.746,48.36c0.441,18.338,6.924,34.692,19.478,49.028c17.904,20.59,40.066,37.612,66.492,51.04
 	c26.404,13.435,54.173,23.282,83.28,29.556c29.093,6.252,58.648,9.398,88.658,9.398c29.995,0,57.974-2.686,83.955-8.057
 	c35.808-8.057,66.933-24.177,93.361-48.36c26.401-24.177,45-51.941,55.742-83.28C751.292,656.853,753.304,625.06,746.589,592.819z"
-        />
-      </Svg>
+          />
+        </Svg>
+      </Link>
 
       {/* <motion.path
         initial={{ pathLength: 0, fill: "rgba(255, 255, 255, 0)" }}
