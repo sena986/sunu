@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
+import Code from "./Routes/Code";
 import Home from "./Routes/Home";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path=":id" element={<Code />} />
       </Routes>
     </Router>
   );
